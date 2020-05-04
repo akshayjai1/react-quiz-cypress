@@ -1,1 +1,4 @@
-{}
+{
+  "projectId": "9fto3k",
+  "ignoreTestFiles":["**/examples/**"]
+}

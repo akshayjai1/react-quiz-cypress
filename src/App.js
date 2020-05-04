@@ -1,26 +1,27 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
+import axios from 'axios';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Quiz from "./components/Quiz";
-import { connect } from "react-redux";
-import { ActionTypes } from "./constants/actionTypes";
+import {connect} from "react-redux";
+import {ActionTypes} from "./constants/actionTypes";
 
 const mapStateToProps = state => {
-  return { ...state.quiz };
+  return {...state.quiz};
 };
 
 const mapDispatchToProps = dispatch => ({
-  onQuizLoad: payload => dispatch({ type: ActionTypes.QuizLoad, payload }),
-  onPagerUpdate: payload => dispatch({ type: ActionTypes.PagerUpdate, payload })
+  onQuizLoad: payload => dispatch({type: ActionTypes.QuizLoad, payload}),
+  onPagerUpdate: payload => dispatch({type: ActionTypes.PagerUpdate, payload})
 });
 
 class App extends Component {
   state = {
     quizes: [
-      { id: "data/javascript.json", name: "Javascript" },
-      { id: "data/aspnet.json", name: "Asp.Net" },
-      { id: "data/csharp.json", name: "C Sharp" },
-      { id: "data/designPatterns.json", name: "Design Patterns" }
+      {id: "data/javascript.json", name: "Javascript"},
+      {id: "data/aspnet.json", name: "Asp.Net"},
+      {id: "data/csharp.json", name: "C Sharp"},
+      {id: "data/designPatterns.json", name: "Design Patterns"}
     ],
     quizId: "data/javascript.json"
   };
@@ -39,10 +40,9 @@ class App extends Component {
   load(quizId) {
     let url = quizId || this.props.quizId;
     /** note the url used for network request */
-    fetch(`../${url}`)
-      .then(res => res.json())
+    axios(`../${url}`)
       .then(res => {
-        let quiz = res;
+        let quiz = res.data;
         quiz.questions.forEach(q => {
           q.options.forEach(o => (o.selected = false));
         });
@@ -54,7 +54,7 @@ class App extends Component {
   }
 
   onChange = e => {
-    this.setState({ quizId: e.target.value });
+    this.setState({quizId: e.target.value});
     this.load(e.target.value);
   };
 

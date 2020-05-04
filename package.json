@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap": "^4.3.1",
     "cypress": "^3.8.2",
     "prop-types": "^15.7.2",
@@ -16,6 +17,8 @@
     "redux-persist": "^5.10.0"
   },
   "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:record": "cypress run --record --key 03d8d66f-60ae-4993-8d40-11071fe945e0",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
