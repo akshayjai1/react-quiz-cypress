@@ -15,15 +15,20 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class QuizWrapper extends Component {
-  state = {
-    quizes: [
-      { id: "data/javascript.json", name: "Javascript" },
-      { id: "data/aspnet.json", name: "Asp.Net" },
-      { id: "data/csharp.json", name: "C Sharp" },
-      { id: "data/designPatterns.json", name: "Design Patterns" },
-    ],
-    quizId: "data/javascript.json",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      quizes: [
+        { id: "data/javascript.json", name: "Javascript" },
+        { id: "data/aspnet.json", name: "Asp.Net" },
+        { id: "data/csharp.json", name: "C Sharp" },
+        { id: "data/designPatterns.json", name: "Design Patterns" },
+      ],
+      quizId: "data/javascript.json",
+    };
+    this.state["da"] = "ABC";
+    this.state.power = props.power; // putting props inside state and modifying is allowed
+  }
 
   pager = {
     index: 0,
@@ -62,7 +67,7 @@ class QuizWrapper extends Component {
         <header className="p-2">
           <div className="row">
             <div className="col-6">
-              <h3 className="pageTitle">Quiz Application</h3>
+              <h3 className="pageTitle">Quiz Application {this.state.power}</h3>
             </div>
             <div className="col-6 text-right">
               <label className="mr-1">Select Quiz:</label>
@@ -85,6 +90,7 @@ class QuizWrapper extends Component {
     );
   }
 }
+// export default QuizWrapper
 console.log("this is quizWrapper", QuizWrapper.toString());
 console.log(QuizWrapper);
 export default connect(mapStateToProps, mapDispatchToProps)(QuizWrapper);
