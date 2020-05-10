@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import QuizWrapper from "./components/QuizWrapper";
-import Frame, { f } from "./components/Frame";
-import HOC from "./components/HOC";
-import HOC1 from "./components/HOC1";
+import QuizWrapper from "./components/quiz/QuizWrapper";
+import Frame, { f } from "./components/func/Frame";
+import HOC from "./components/hoc/HOC";
+import HOC1 from "./components/hoc/HOC1";
 
 class App extends Component {
   render() {
@@ -22,7 +22,6 @@ class App extends Component {
         {Frame({ title: "CAT", photo: "Cat Photo" })}
 
         <HOC parentName={"Parent"} />
-        <HOC1 parName="par" Comp={Frame} />
         <QuizWrapper />
       </div>
     );

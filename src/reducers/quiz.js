@@ -14,16 +14,16 @@ let initialQuiz = {
       shuffleQuestions: false,
       shuffleOptions: false,
       showPager: true,
-      theme: "none"
+      theme: "none",
     },
-    questions: []
+    questions: [],
   },
   mode: "quiz",
   pager: {
     index: 0,
     size: 1,
-    count: 1
-  }
+    count: 1,
+  },
 };
 
 export default (state = { ...initialQuiz }, action) => {
@@ -32,24 +32,24 @@ export default (state = { ...initialQuiz }, action) => {
       return {
         ...state,
         pager: action.payload,
-        mode: "quiz"
+        mode: "quiz",
       };
     case ActionTypes.QuizLoad:
       return {
         ...state,
-        quiz: action.payload
+        quiz: action.payload,
       };
     case ActionTypes.QuizSubmit:
       console.log("quiz.js Submitted.");
       return {
         ...state,
-        mode: action.payload
+        mode: action.payload,
       };
     case ActionTypes.QuizAnswer:
       console.log("quiz.js reducer Quiz Answer called.");
       return {
         ...state,
-        quiz: action.payload
+        quiz: action.payload,
       };
     default:
       return state;

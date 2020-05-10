@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import Quiz from "./Quiz";
-import { ActionTypes } from "../constants/actionTypes";
+import { ActionTypes } from "../../constants/actionTypes";
 
 const mapStateToProps = (state) => {
   return { ...state.quiz };
@@ -67,7 +67,7 @@ class QuizWrapper extends Component {
         <header className="p-2">
           <div className="row">
             <div className="col-6">
-              <h3 className="pageTitle">Quiz Application {this.state.power}</h3>
+              <h3 className="pageTitle">Quiz Application</h3>
             </div>
             <div className="col-6 text-right">
               <label className="mr-1">Select Quiz:</label>

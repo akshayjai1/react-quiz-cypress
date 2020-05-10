@@ -14,7 +14,8 @@
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
-    "redux-persist": "^5.10.0"
+    "redux-persist": "^5.10.0",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "cypress:record": "cypress run --record --key 03d8d66f-60ae-4993-8d40-11071fe945e0",
