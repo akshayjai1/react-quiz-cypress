@@ -5,14 +5,17 @@ import QuizWrapper from "./components/quiz/QuizWrapper";
 import Frame, { f } from "./components/func/Frame";
 import HOC from "./components/hoc/HOC";
 import HOC1 from "./components/hoc/HOC1";
-
+import Button from "./components/styled/Button";
+console.log("imported button in app", Button);
+console.log("imported Frame in App", Frame);
+console.log("imported HOC in App", HOC);
 class App extends Component {
   render() {
     return (
       <div>
+        <Button>first button</Button>
         <Frame title={"A Technology Quiz"} photo={1}>
-          <Frame title={f} />
-
+          {/* <Frame title={f} /> */}
           {/* {() => {
             console.log("abc");
             return <Frame title="child" />;
