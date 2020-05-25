@@ -1,6 +1,6 @@
 import React from "react";
 
-const RefParent = (props) => {
+const UncontrolledF = (props) => {
   const fRef1 = React.createRef();
   let fRef2 = React.createRef();
   let fRef3 = null;
@@ -9,10 +9,10 @@ const RefParent = (props) => {
 
   React.useEffect(() => {
     // debugger;
-    console.log("this is ref in useEffect in RefParent", fRef1);
-    console.log("this is ref in useEffect in RefParent", fRef2);
-    console.log("this is ref in useEffect in RefParent", fRef3);
-    console.log("this is ref in useEffect in RefParent", fRef4);
+    console.log("this is ref in useEffect in UncontrolledF", fRef1);
+    console.log("this is ref in useEffect in UncontrolledF", fRef2);
+    console.log("this is ref in useEffect in UncontrolledF", fRef3);
+    console.log("this is ref in useEffect in UncontrolledF", fRef4);
     window.reff = {
       fRef1,
       fRef2,
@@ -22,7 +22,7 @@ const RefParent = (props) => {
   });
   return (
     <div>
-      <p>RefParent component</p>
+      <p>UncontrolledF component</p>
       <input name="first" ref={fRef1} />
       {/* fRef2 does */}
       <input
@@ -37,4 +37,4 @@ const RefParent = (props) => {
   );
 };
 
-export default RefParent;
+export default UncontrolledF;

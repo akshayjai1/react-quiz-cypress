@@ -1,6 +1,13 @@
 import React from "react";
-import RefParent from "./RefParent";
+import styled from "styled-components";
+import UncontrolledF from "./UncontrolledF";
 
+const In = styled.input`
+  background-color: orange;
+  color: #fff;
+  padding: 5px;
+  margin: 10px;
+`;
 class Uncontrolled extends React.Component {
   constructor(props) {
     super();
@@ -30,11 +37,11 @@ class Uncontrolled extends React.Component {
   componentDidMount() {
     console.log(window);
     window.refss = {
-      x: this.ref1,
-      y: this.ref5,
-      r3: this.ref2,
-      z: this.ref3,
-      a: this.ref4,
+      ref1: this.ref1,
+      ref5: this.ref5,
+      ref2: this.ref2,
+      ref3: this.ref3,
+      ref4: this.ref4,
     };
     console.log("in component did mount of refClass this.ref1 =", this.ref1);
     console.log("in component did mount of refClass this.ref2 =", this.ref2);
@@ -47,18 +54,18 @@ class Uncontrolled extends React.Component {
     return (
       <div>
         <h3>Component = Uncontrolled</h3>
-        <input
+        <In
           name="ref1"
           ref={this.ref1}
           onKeyUp={this.onKeyup.bind(this, "first")}
         />
-        <input name="ref2" ref={this.cb} />
-        <input name="ref3" ref={this.cb3} />
+        <In name="ref2" ref={this.cb} />
+        <In name="ref3" ref={this.cb3} />
         {/* below code does not work as expected z = null */}
-        <input name="ref4" ref={this.ref3} />
+        <In name="ref4" ref={this.ref3} />
         {/* below code throws react warning because a = {} initially */}
-        <input name="ref5" ref={this.ref4} />
-        <RefParent />
+        <In name="ref5" ref={this.ref4} />
+        <UncontrolledF />
       </div>
     );
   }

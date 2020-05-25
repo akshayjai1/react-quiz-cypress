@@ -91,5 +91,11 @@
 }
 
 body {
-  background-color: orange;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(121, 231, 189) 0%,
+    rgb(87, 207, 17) 35%,
+    rgb(5, 134, 160) 100%
+  );
 }
