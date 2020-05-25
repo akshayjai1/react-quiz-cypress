@@ -7,30 +7,66 @@ import QuizWrapper from "./components/quiz/QuizWrapper";
 
 import Frame, { f } from "./components/func/Frame";
 import HOC from "./components/hoc/HOC";
-import HOC1 from "./components/hoc/HOC1";
 import Button from "./components/styled/Button";
-console.log("imported button in app", Button);
-console.log("imported Frame in App", Frame);
-console.log("imported HOC in App", HOC);
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Link to="/quiz">Quiz App</Link>
-        <Button>first button</Button>
-        <Frame title={"A Technology Quiz"} photo={1}>
-          {/* <Frame title={f} /> */}
-          {/* {() => {
-            console.log("abc");
-            return <Frame title="child" />;
-          }} */}
-        </Frame>
+import asyncHOC from "./components/hoc/asyncHOC";
+// console.log("imported button in app", Button);
+// console.log("imported Frame in App", Frame);
+// console.log("imported HOC in App", HOC);
+// class App extends Component {
+//   abc = (<div>A</div>);
+//   render() {
+//     console.log("line 1", this.abc);
+//     return (
+//       <div>
+//         {this.abc}
+//         <Link to="/quiz">Quiz App</Link>
+//         <Button>first button</Button>
+//         <HOC a={"Parent"} />
+//       </div>
+//     );
+//   }
+// }
 
-        {Frame({ title: "CAT", photo: "Cat Photo" })}
+function App() {
+  let state = 1;
+  let a = <div>A = {state}</div>;
 
-        <HOC parentName={"Parent"} />
-      </div>
-    );
-  }
+  let c = <div>Actual State = {actualState}</div>;
+
+  let [actualState, setActualState] = React.useState(9);
+
+  let clickHandler = (x) => {
+    state = state + x;
+    console.log("state becomes  ", state);
+    console.log("click handler", x);
+  };
+  asyncHOC().then((result) => {
+    setActualState(result);
+  });
+  let b = (
+    <button
+      onClick={() => {
+        clickHandler(3);
+      }}
+    >
+      B
+    </button>
+  );
+  let e = (
+    <button
+      onClick={() => {
+        setActualState(actualState + 3);
+      }}
+    >
+      E
+    </button>
+  );
+  let d = [a, b, c, e];
+
+  // console.log("line 31", d);
+  // console.log(asyncHOC);
+  return actualState;
+  // return asyncHOC();
 }
+
 export default App;

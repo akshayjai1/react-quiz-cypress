@@ -1,15 +1,9 @@
 import React from "react";
 
-const HOC = (props) => {
-  const { parentName } = props;
-  const Inner = (innerProps) => {
-    return (
-      <div>
-        {parentName}-{innerProps.name}
-      </div>
-    );
+const HOC = () => {
+  return (props) => {
+    return <div>{props.a}</div>;
   };
-  return <Inner name="ABC" />;
 };
 
 export default HOC;

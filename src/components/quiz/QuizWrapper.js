@@ -91,6 +91,6 @@ class QuizWrapper extends Component {
   }
 }
 // export default QuizWrapper
-console.log("this is quizWrapper", QuizWrapper.toString());
-console.log(QuizWrapper);
+// console.log("this is quizWrapper", QuizWrapper.toString());
+// console.log(QuizWrapper);
 export default connect(mapStateToProps, mapDispatchToProps)(QuizWrapper);
