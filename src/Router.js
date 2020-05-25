@@ -4,7 +4,7 @@ import App from "./App";
 import "./styles/route.scss";
 import QuizWrapper from "./components/quiz/QuizWrapper";
 import AsyncCompResolver from "./components/hoc/AsyncCompResolver";
-import Uncontrolled from "./components/ref/typeone/Uncontrolled";
+import Ref from "./components/ref/Ref";
 
 const Routes = (props) => {
   return (
@@ -28,7 +28,7 @@ const Routes = (props) => {
         <Route path="/quiz" component={QuizWrapper} />
         <Route path="/async" component={AsyncCompResolver} />
         {/* <Route path="/fp" component={FP} /> */}
-        <Route path="/ref" component={Uncontrolled} />
+        <Route path="/ref" component={Ref} />
         <Route path="/" component={App} />
       </Switch>
     </BrowserRouter>

@@ -1,13 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import UncontrolledF from "./UncontrolledF";
+import { In } from "../../styled/index";
 
-const In = styled.input`
-  background-color: orange;
-  color: #fff;
-  padding: 5px;
-  margin: 10px;
-`;
 class Uncontrolled extends React.Component {
   constructor(props) {
     super();
@@ -53,7 +46,7 @@ class Uncontrolled extends React.Component {
   render() {
     return (
       <div>
-        <h3>Component = Uncontrolled</h3>
+        <h3>Uncontrolled Class Component</h3>
         <In
           name="ref1"
           ref={this.ref1}
@@ -65,7 +58,6 @@ class Uncontrolled extends React.Component {
         <In name="ref4" ref={this.ref3} />
         {/* below code throws react warning because a = {} initially */}
         <In name="ref5" ref={this.ref4} />
-        <UncontrolledF />
       </div>
     );
   }

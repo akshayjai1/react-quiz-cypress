@@ -1,5 +1,5 @@
 import React from "react";
-
+import { In } from "../../styled/index";
 const UncontrolledF = (props) => {
   const fRef1 = React.createRef();
   let fRef2 = React.createRef();
@@ -8,7 +8,6 @@ const UncontrolledF = (props) => {
   console.log("this is ref = re = ", fRef1);
 
   React.useEffect(() => {
-    // debugger;
     console.log("this is ref in useEffect in UncontrolledF", fRef1);
     console.log("this is ref in useEffect in UncontrolledF", fRef2);
     console.log("this is ref in useEffect in UncontrolledF", fRef3);
@@ -22,17 +21,17 @@ const UncontrolledF = (props) => {
   });
   return (
     <div>
-      <p>UncontrolledF component</p>
-      <input name="first" ref={fRef1} />
+      <h3>Uncontrolled Functional Component</h3>
+      <In name="first" ref={fRef1} />
       {/* fRef2 does */}
-      <input
+      <In
         name="second"
         ref={(e) => {
           fRef2 = e;
         }}
       />
-      <input name="third" ref={fRef3} />
-      <input name="fourth" ref={fRef4} />
+      <In name="third" ref={fRef3} />
+      <In name="fourth" ref={fRef4} />
     </div>
   );
 };
