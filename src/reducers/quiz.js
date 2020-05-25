@@ -1,5 +1,5 @@
 import { ActionTypes } from "../constants/actionTypes";
-import { combineReducers } from "redux";
+// import { combineReducers } from "redux";
 
 let initialQuiz = {
   quiz: {

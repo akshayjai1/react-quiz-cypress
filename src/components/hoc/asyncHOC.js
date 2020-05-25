@@ -1,4 +1,3 @@
-import React from "react";
 /**
  * returning a promise directly
  * @param {} props
@@ -13,7 +12,7 @@ async function asyncHOC(props) {
       9
     );
   });
-  const x = await promise;
+  // const x = await promise;
   return promise;
 }
 export default asyncHOC;
