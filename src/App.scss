@@ -98,4 +98,14 @@ body {
     rgb(87, 207, 17) 35%,
     rgb(5, 134, 160) 100%
   );
+  font-size: 22px;
+  .uncontrolled {
+    margin: 30px;
+  }
+  .fence {
+    border: 1px solid red;
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px;
+  }
 }

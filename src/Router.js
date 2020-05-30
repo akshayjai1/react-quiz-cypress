@@ -1,10 +1,11 @@
-import React from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import App from "./App";
-import "./styles/route.scss";
-import QuizWrapper from "./components/quiz/QuizWrapper";
-import AsyncCompResolver from "./components/hoc/AsyncCompResolver";
-import Ref from "./components/ref/Ref";
+import React from 'react';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import App from './App';
+import './styles/route.scss';
+import QuizWrapper from './components/quiz/QuizWrapper';
+import AsyncCompResolver from './components/hoc/AsyncCompResolver';
+import Ref from './components/ref/Ref';
+import Type from './components/type/Type';
 
 const Routes = (props) => {
   return (
@@ -23,12 +24,16 @@ const Routes = (props) => {
         <Link className="route" to="/">
           App
         </Link>
+        <Link className="route" to="/type">
+          Type
+        </Link>
       </div>
       <Switch>
         <Route path="/quiz" component={QuizWrapper} />
         <Route path="/async" component={AsyncCompResolver} />
         {/* <Route path="/fp" component={FP} /> */}
         <Route path="/ref" component={Ref} />
+        <Route path="/type" component={Type} />
         <Route path="/" component={App} />
       </Switch>
     </BrowserRouter>
