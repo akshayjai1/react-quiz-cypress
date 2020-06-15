@@ -3,8 +3,9 @@ import React, { useRef, useEffect, useState } from "react";
 import ForwarededRefChild from "./ForwardedRefChild";
 
 function ForwardedRefParent() {
-  const childRef = useRef(null);
-  const [state, setState] = useState({});
+  const childRef = useRef({ ab: 1 });
+  const [state, setState] = useState(1);
+
   // const newRef = useRef(null);
   let x = {};
   const onClick = (color) => {
@@ -18,10 +19,11 @@ function ForwardedRefParent() {
     console.log(state.current, "Parent Component");
   });
   debugger;
+  console.log(childRef);
   return (
     <div className="fence">
-      State.current = {state.current}
-      <ForwarededRefChild
+      State.current = {state}
+      {/*<ForwarededRefChild
         forwardedRef={childRef}
         newRef={x}
         secondRef={state}
@@ -29,7 +31,23 @@ function ForwardedRefParent() {
         // newRef={newRef}
         value="ChildRef value"
         onClick={onClick}
-      />
+      />*/}
+      <button
+        onClick={() => {
+          console.log("state", state);
+          setState(state + 1);
+        }}
+      >
+        Change State
+      </button>
+      <button
+        onClick={() => {
+          childRef.current.ab = childRef.current.ab + 1;
+        }}
+      >
+        Increment Ref
+      </button>
+      <div>Ref value = {childRef.current.ab}</div>
     </div>
   );
 }

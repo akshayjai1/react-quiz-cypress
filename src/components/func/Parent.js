@@ -8,7 +8,7 @@ const Parent = (props) => {
   const [data1, setData1] = React.useState("");
   const [data2, setData2] = React.useState("");
   const [data3, setData3] = React.useState("");
-
+  const ref = React.useRef();
   const reset = () => {
     setData1(0);
     setData(0);

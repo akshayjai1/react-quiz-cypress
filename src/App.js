@@ -4,13 +4,14 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 
 import asyncHOC from "./components/hoc/asyncHOC";
+import Child from "./components/func/Child";
 
 function App() {
   let [actualState, setActualState] = React.useState(9);
 
-  asyncHOC().then((result) => {
-    setActualState(result);
-  });
+  // asyncHOC().then((result) => {
+  //   setActualState(result);
+  // });
   /*
   let state = 1;
   let clickHandler = (x) => {
@@ -28,20 +29,28 @@ function App() {
       B
     </button>
   );
+  
+  let d = [a, b, c, e];
+ */
   let e = (
     <button
       onClick={() => {
         setActualState(actualState + 3);
-      }}>
+      }}
+    >
       E
     </button>
   );
-  let d = [a, b, c, e];
- */
 
   // console.log("line 31", d);
   // console.log(asyncHOC);
-  return actualState;
+  return (
+    <div>
+      {e}
+      {actualState}
+      {actualState < 10 ? <Child /> : <div>ABC</div>}
+    </div>
+  );
   // return asyncHOC();
 }
 

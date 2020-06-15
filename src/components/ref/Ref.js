@@ -8,20 +8,20 @@ const Cont = React.createContext();
 
 const Ref = (props) => {
   return (
-    <>
+    <div>
       <Functional />
       {true && (
-        <>
+        <div>
           <Cont.Provider value={8}>
             <Uncontrolled />
           </Cont.Provider>
           <UncontrolledF />
-        </>
+        </div>
       )}
       <hr />
-      {false && <ForwardedRefParent />}
+      <ForwardedRefParent />
       {/* <ForwardRefParent /> */}
-    </>
+    </div>
   );
 };
 

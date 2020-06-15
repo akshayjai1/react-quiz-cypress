@@ -1,9 +1,11 @@
-import React from 'react';
-import Immer from './Immer';
+import React from "react";
+import Immer from "./Immer";
 
-const Type = () => {
+const Type = (props) => {
+  debugger;
   return (
     <div>
+      {props.match.params.ab}
       <Immer />
     </div>
   );
