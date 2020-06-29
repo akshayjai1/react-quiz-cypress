@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { Button } from "../../styled";
+// import { Button } from "../../styled";
 
 const Functional = (props) => {
   let var1 = 1;
-  let [var2, setVar] = React.useState(2);
+  let [var2 /* , setVar */] = React.useState(2);
   let reference = useRef("a ref");
-  const changeHandler = async () => {
+  /* const changeHandler = async () => {
     console.log(`var1 = ${var1} and var2 = ${var2}`);
     var1 = 2;
     // await setVar(3);
@@ -14,7 +14,7 @@ const Functional = (props) => {
     console.log(
       `var1 = ${var1} and var2 = ${var2} and reference = ${reference.current}`
     );
-  };
+  }; */
   useEffect(() => {
     debugger;
     console.log(
@@ -23,7 +23,7 @@ const Functional = (props) => {
   });
   return [3, 4];
   //{0:3, 1:4}
-  return (
+  /* return (
     <div>
       var1 = {var1}
       <br />
@@ -31,8 +31,8 @@ const Functional = (props) => {
       <br />
       <div>{reference.current}</div>
       <Button onClick={changeHandler}>Change Var1</Button>
-    </div>
-  );
+    </div> 
+  );*/
 };
 
 export default Functional;

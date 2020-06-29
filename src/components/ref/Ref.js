@@ -2,7 +2,6 @@ import React from "react";
 import Uncontrolled from "./typeone/Uncontrolled";
 import UncontrolledF from "./typeone/UncontrolledF";
 import ForwardedRefParent from "./typetwo/ForwardedRefParent";
-import ForwardRefParent from "./typethree/ForwardRefParent";
 import Functional from "./typeone/Functional";
 const Cont = React.createContext();
 

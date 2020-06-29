@@ -1,57 +1,36 @@
 import React from "react";
-
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
+import { useDispatch } from "react-redux";
 
-import asyncHOC from "./components/hoc/asyncHOC";
-import Child from "./components/func/Child";
-
-function App() {
-  let [actualState, setActualState] = React.useState(9);
-
-  // asyncHOC().then((result) => {
-  //   setActualState(result);
-  // });
-  /*
-  let state = 1;
-  let clickHandler = (x) => {
-    state = state + x;
-    console.log("state becomes  ", state);
-    console.log("click handler", x);
-  };
-  let a = <div>A = {state}</div>;
-  let c = <div>Actual State = {actualState}</div>;
-  let b = (
-    <button
-      onClick={() => {
-        clickHandler(3);
-      }}>
-      B
-    </button>
-  );
-  
-  let d = [a, b, c, e];
- */
-  let e = (
-    <button
-      onClick={() => {
-        setActualState(actualState + 3);
-      }}
-    >
-      E
-    </button>
-  );
-
-  // console.log("line 31", d);
-  // console.log(asyncHOC);
+import { Heading, Wrapper, Title } from "./components/styled/styled";
+import { StyledButtons } from "./components/styled/StyledButtons";
+import { fetch } from "./slices/hacker";
+import { incrementAsync } from "./slices/inc";
+export function App() {
+  const dispatch = useDispatch();
   return (
     <div>
-      {e}
-      {actualState}
-      {actualState < 10 ? <Child /> : <div>ABC</div>}
+      {/* <Heading>
+        Redux App <span>-Thunk - Saga - StyleComponents</span>
+      </Heading> */}
+      <Wrapper>
+        <Title>
+          Redux App <span>-Thunk - Saga - StyleComponents</span>
+        </Title>
+      </Wrapper>
+      <StyledButtons />
+      <Heading onClick={() => dispatch(fetch())}>redux action</Heading>
+      <Heading
+        onClick={() => dispatch(incrementAsync())}
+        // onClick={() =>
+        //   dispatch({
+        //     type: "INCREMENT_ASYNC",
+        //   })
+        // }
+      >
+        redux saga action
+      </Heading>
     </div>
   );
-  // return asyncHOC();
 }
-
-export default App;

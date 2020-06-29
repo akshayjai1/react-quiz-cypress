@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import App from "./App";
+import { App } from "./App";
 import "./styles/route.scss";
 import QuizWrapper from "./components/quiz/QuizWrapper";
 import AsyncCompResolver from "./components/hoc/AsyncCompResolver";
@@ -8,7 +8,7 @@ import Ref from "./components/ref/Ref";
 import Type from "./components/type/Type";
 // import FP from "./components/func/FP";
 
-const Routes = (props) => {
+const RoutesC = (props) => {
   return (
     <BrowserRouter className="routes">
       <div className="routes">
@@ -42,11 +42,11 @@ const Routes = (props) => {
         {/* <Route path="/fp" component={FP} /> */}
         <Route path="/ref" component={Ref} />
         <Route path="/type/:ab" component={Type} />
-        <Route path="/" component={App} />
         <Route path="/quiz" component={QuizWrapper} />
+        <Route path="/" component={App} />
       </Switch>
     </BrowserRouter>
   );
 };
 
-export default React.memo(Routes);
+export const Router = React.memo(RoutesC);

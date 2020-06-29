@@ -1,17 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
 
-import ForwarededRefChild from "./ForwardedRefChild";
-
 function ForwardedRefParent() {
   const childRef = useRef({ ab: 1 });
   const [state, setState] = useState(1);
 
   // const newRef = useRef(null);
   let x = {};
-  const onClick = (color) => {
+  /* const onClick = (color) => {
     console.log(color);
     childRef.current.style.color = color;
-  };
+  }; */
 
   useEffect(() => {
     console.log(childRef.current, "Parent Component");

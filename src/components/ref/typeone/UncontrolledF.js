@@ -1,7 +1,6 @@
 import React from "react";
-import { In, Button } from "../../styled/index";
+import { In, Heading } from "../../styled/styled";
 const UncontrolledF = (props) => {
-  const [state, setState] = React.useState("state variable");
   const fRef1 = React.createRef();
   let fRef2;
   let fRef3 = null;
@@ -38,7 +37,7 @@ const UncontrolledF = (props) => {
       <In name="third" ref={fRef3} />
       <In name="fourth" ref={fRef4} />
       <In name="fifth" ref={fRef5} />
-      <Button onClick={changeHandler}>Change State</Button>
+      <Heading onClick={changeHandler}>Change State</Heading>
     </div>
   );
 };

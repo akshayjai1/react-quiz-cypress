@@ -1,5 +1,5 @@
 import React from "react";
-import { In, Button } from "../../styled/index";
+import { In, Heading } from "../../styled/styled";
 
 class Uncontrolled extends React.Component {
   constructor(props) {
@@ -73,9 +73,9 @@ class Uncontrolled extends React.Component {
         {/* below code throws react warning because a = {} initially */}
         <In name="ref4" ref={this.ref4} />
         <In name="ref5" ref={this.cb} />
-        <Button onClick={() => this.setState({ state1: "newState" })}>
+        <Heading onClick={() => this.setState({ state1: "newState" })}>
           Change State
-        </Button>
+        </Heading>
       </div>
     );
   }

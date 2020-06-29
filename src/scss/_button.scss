@@ -1,0 +1,22 @@
+@use 'image';
+
+button.button-with-a {
+  background-color: orange;
+  //   @extend image.ab;
+  //   @include image.imageWidth();;
+}
+.routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  a.route {
+    font-size: 18px;
+    color: #fff;
+    background: green;
+    padding: 10px 30px;
+    border-left: 1px solid #1c5504;
+    &:hover {
+      text-decoration: none;
+      background-color: lighten($color: green, $amount: 10%);
+    }
+  }
+}
