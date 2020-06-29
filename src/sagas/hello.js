@@ -25,7 +25,7 @@ export function* watchIncrementAsync() {
   debugger;
   yield takeEvery(incrementAsync, incrementAsyncSaga);
   debugger;
-  yield 3;
+  yield 4;
 }
 
 // notice how we now only export the rootSaga
