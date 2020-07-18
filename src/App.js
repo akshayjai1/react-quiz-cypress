@@ -1,12 +1,13 @@
-import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./App.scss";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
+import { useDispatch } from 'react-redux';
 
-import { Heading, Wrapper, Title } from "./components/styled/styled";
-import { StyledButtons } from "./components/styled/StyledButtons";
-import { fetch } from "./slices/hacker";
-import { incrementAsync } from "./slices/inc";
+import { Heading, Wrapper, Title } from './components/styled/styled';
+import { StyledButtons } from './components/styled/StyledButtons';
+import { fetch } from './slices/hacker';
+import { incrementAsync } from './slices/inc';
+import { CSSGrid } from './components/generic/CSSGrid';
 export function App() {
   const dispatch = useDispatch();
   return (
@@ -19,6 +20,7 @@ export function App() {
           Redux App <span>-Thunk - Saga - StyleComponents</span>
         </Title>
       </Wrapper>
+      <CSSGrid />
       <StyledButtons />
       <Heading onClick={() => dispatch(fetch())}>redux action</Heading>
       <Heading

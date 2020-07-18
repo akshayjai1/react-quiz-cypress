@@ -1,15 +1,15 @@
-import React, { useRef, useEffect } from "react";
-import ForwardRefChild from "./ForwardRefChild";
-import { Button } from "../../styled";
+import React, { useRef, useEffect } from 'react';
+import ForwardRefChild from './ForwardRefChild';
+import { Button } from '../../styled';
 
 const ForwardRefParent = (props) => {
   const reference = useRef(null);
-  debugger;
+  //debugger;
   let newReference = {};
   useEffect(() => {
-    debugger;
-    console.log("Forward Ref Parent", reference);
-    console.log("Forward Ref Parent", newReference);
+    //debugger;
+    console.log('Forward Ref Parent', reference);
+    console.log('Forward Ref Parent', newReference);
     return () => {
       //
     };

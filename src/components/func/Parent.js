@@ -1,13 +1,13 @@
-import React from "react";
-import Child from "./Child";
-import Select from "./Select";
-import ControlledChild from "./ControlledChild";
+import React from 'react';
+import Child from './Child';
+import Select from './Select';
+import ControlledChild from './ControlledChild';
 
 const Parent = (props) => {
-  const [data, setData] = React.useState("");
-  const [data1, setData1] = React.useState("");
-  const [data2, setData2] = React.useState("");
-  const [data3, setData3] = React.useState("");
+  const [data, setData] = React.useState('');
+  const [data1, setData1] = React.useState('');
+  const [data2, setData2] = React.useState('');
+  const [data3, setData3] = React.useState('');
   const ref = React.useRef();
   const reset = () => {
     setData1(0);
@@ -16,11 +16,11 @@ const Parent = (props) => {
     setData3(0);
   };
   const r = React.createRef();
-  debugger;
+  //debugger;
   return (
     <div>
       <div>A child wrapper</div>
-      <div style={{ border: "1px solid red" }}>
+      <div style={{ border: '1px solid red' }}>
         Data coming from child = {data}
         debuger; Data from ref = {r.current}
       </div>

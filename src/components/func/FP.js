@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 // import "./fp1.js";
-import Frame from "./Frame.js";
+import Frame from './Frame.js';
 import {
   ReactInput,
   ReactSelect,
@@ -8,10 +8,10 @@ import {
   ReactInput1,
   Comp1,
   Comp2,
-} from "./fp2.js";
-import Parent from "./Parent.js";
+} from './fp2.js';
+import Parent from './Parent.js';
 const FP = (props) => {
-  debugger;
+  //debugger;
   return (
     <div>
       <div>Functional Programming as a precursor to React Development</div>

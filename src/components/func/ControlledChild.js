@@ -1,8 +1,8 @@
-import React from "react";
-import Select from "./Select";
+import React from 'react';
+import Select from './Select';
 
 const ControlledChild = (props, ref) => {
-  //   debugger;
+  //   //debugger;
   const { data, setter } = props;
   const onChange = (ev) => {
     setter(ev.target.value);
