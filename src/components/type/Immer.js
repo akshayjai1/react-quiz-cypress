@@ -1,10 +1,10 @@
-import React, { Dispatch } from "react";
+import React, { Dispatch } from 'react';
 
 const Immer = (props) => {
-  console.log("This is react", React);
-  console.log("This is Dispatch", Dispatch);
+  console.log('This is react', React);
+  console.log('This is Dispatch', Dispatch);
   console.log(props.children);
-  debugger;
+  //debugger;
   return (
     <div>
       Immer

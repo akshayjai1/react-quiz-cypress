@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo, memo } from 'react';
+import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import { useDispatch } from 'react-redux';
@@ -94,3 +95,32 @@ const GrandChild = () => {
 	console.log('grandChild');
 	return <div>GrandChild</div>;
 };
+import { CSSGrid } from './components/generic/CSSGrid';
+export function App() {
+  const dispatch = useDispatch();
+  return (
+    <div>
+      {/* <Heading>
+        Redux App <span>-Thunk - Saga - StyleComponents</span>
+      </Heading> */}
+      <Wrapper>
+        <Title>
+          Redux App <span>-Thunk - Saga - StyleComponents</span>
+        </Title>
+      </Wrapper>
+      <CSSGrid />
+      <StyledButtons />
+      <Heading onClick={() => dispatch(fetch())}>redux action</Heading>
+      <Heading
+        onClick={() => dispatch(incrementAsync())}
+        // onClick={() =>
+        //   dispatch({
+        //     type: "INCREMENT_ASYNC",
+        //   })
+        // }
+      >
+        redux saga action
+      </Heading>
+    </div>
+  );
+}

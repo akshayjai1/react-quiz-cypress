@@ -1,18 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const inc = createSlice({
   initialState: 0,
-  name: "inc",
+  name: 'inc',
   reducers: {
     increment: (state, action) => {
-      console.log("incrementing");
+      console.log('incrementing');
       state += 1;
-      debugger;
+      //debugger;
       return state;
     },
     incrementAsync: (state, action) => {
-      console.log("in incrementAsync reducer");
-      debugger;
+      console.log('in incrementAsync reducer');
+      //debugger;
       return state;
     },
   },

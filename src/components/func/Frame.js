@@ -1,12 +1,12 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 /**
  * stateless component === A photoframe, we always/generally put a photo inside photoframe
  * @param {} props
  */
 const Frame = (props) => {
   let { title } = props;
-  debugger;
+  //debugger;
   const str = `${title}`;
   return (
     <div>

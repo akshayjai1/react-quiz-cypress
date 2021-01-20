@@ -1,10 +1,10 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef } from 'react';
 
 const ForwardRefChild = (props, ref1) => {
   const { newRef } = props;
-  debugger;
-  console.log("ForwardRefChild", ref1);
-  console.log("ForwardRefChild", newRef);
+  //debugger;
+  console.log('ForwardRefChild', ref1);
+  console.log('ForwardRefChild', newRef);
   return (
     <div className="fence">
       <h3>Forward Ref Child</h3>
