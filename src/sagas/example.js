@@ -16,3 +16,14 @@ var y = first();
 function k(x) {
   return y.next(x);
 }
+
+async function getApiResult() {
+  return 1;
+}
+var x = getApiResult();
+console.log(x);
+
+function* getIterator() {
+  console.log(1);
+  return 1;
+}

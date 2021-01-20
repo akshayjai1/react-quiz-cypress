@@ -16,7 +16,7 @@ button.button-with-a {
     border-left: 1px solid #1c5504;
     &:hover {
       text-decoration: none;
-      background-color: lighten($color: green, $amount: 10%);
+      background-color: lighten($color: green, $amount: 50%);
     }
   }
 }

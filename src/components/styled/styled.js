@@ -7,6 +7,10 @@ export const Heading = styled.div`
   height: 60px;
   width: max-content;
   padding: 10px 30px;
+  background-color: {(props)=> props.primary ? orange:yellow};
+  span {
+    background-color: orange;
+  };
 `;
 export const In = styled.input`
   background-color: orange;

@@ -1,4 +1,5 @@
-import { ActionTypes } from "../constants/actionTypes";
+import { ActionTypes, STOCK_URL } from "../constants/actionTypes";
+import Axios from "axios";
 // import { combineReducers } from "redux";
 
 let initialQuiz = {
@@ -27,7 +28,21 @@ let initialQuiz = {
 };
 
 export default (state = { ...initialQuiz }, action) => {
+  // debugger;
   switch (action.type) {
+    case "INCREMENT_ASYNC":
+      return {
+        ...state,
+        pager: {
+          ...state.pager,
+          count: state.pager.count + 1,
+        },
+      };
+    case "INCREMENT_ASYNC_ERROR":
+      return {
+        ...state,
+        error: true,
+      };
     case ActionTypes.PagerUpdate:
       return {
         ...state,
@@ -54,4 +69,19 @@ export default (state = { ...initialQuiz }, action) => {
     default:
       return state;
   }
+};
+
+export const getStocksAndInc = () => {
+  return async (dispatch) => {
+    try {
+      await Axios.get(STOCK_URL);
+      dispatch({
+        type: "INCREMENT_ASYNC",
+      });
+    } catch (error) {
+      dispatch({
+        type: "INCREMENT_ASYNC_ERROR",
+      });
+    }
+  };
 };

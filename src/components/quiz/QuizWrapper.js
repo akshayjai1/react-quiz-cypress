@@ -19,10 +19,10 @@ class QuizWrapper extends Component {
     super(props);
     this.state = {
       quizes: [
-        { id: "data/javascript.json", name: "Javascript" },
-        { id: "data/aspnet.json", name: "Asp.Net" },
-        { id: "data/csharp.json", name: "C Sharp" },
-        { id: "data/designPatterns.json", name: "Design Patterns" },
+        { id: "http://localhost:3089/quiz", name: "Javascript" },
+        // { id: "data/aspnet.json", name: "Asp.Net" },
+        // { id: "data/csharp.json", name: "C Sharp" },
+        // { id: "data/designPatterns.json", name: "Design Patterns" },
       ],
       quizId: "data/javascript.json",
     };
@@ -42,10 +42,13 @@ class QuizWrapper extends Component {
   }
 
   load(quizId) {
-    let url = quizId || this.props.quizId;
+    debugger;
+    // let url = quizId || this.props.quizId;
     /** note the url used for network request */
-    axios(`../${url}`).then((res) => {
+    axios(`http://localhost:3089/quiz`).then((res) => {
+      // axios(`../${url}`).then((res) => {
       let quiz = res.data;
+      debugger;
       quiz.questions.forEach((q) => {
         q.options.forEach((o) => (o.selected = false));
       });

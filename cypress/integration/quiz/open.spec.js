@@ -1,23 +1,23 @@
 import Quiz from "../../pages/Quiz";
-
+import { javascript } from "../../fixtures/data/javascript.js";
 describe("Spec For JavaScript Quiz", () => {
   /** it block === one cypress run */
   it("should open to quiz app", () => {
-    cy.visit("http://localhost:3000"); //1
-    cy.wait(3000);
+    cy.visit("http://localhost:3001/quiz"); //1
     // co = document.querySelector('h3.pageTitle');
     // co.innerHTML = ""
     cy.get("h3.pageTitle").should("have.text", "Quiz Application"); //2
-    cy.get("h3.pageTitle").then((element) => {
+    /* cy.get("h3.pageTitle").then((element) => {
       //cypress assertions
       //element.find('p.title')
       const ele = element.closest(".wrapper");
       cy.wrap(ele).should("have.class", "wrapperOne");
     });
     var d = cy.fixture("/data/aspnet.json").as("aspFix"); //alias
-
+ */
     cy.server();
-    cy.get("@aspFix").then((data) => {
+    cy.route("http://localhost:3089/quiz", javascript).as("javascript");
+    /* cy.get("@aspFix").then((data) => {
       console.log(data);
     });
     cy.log("adfadfa");
@@ -42,6 +42,6 @@ describe("Spec For JavaScript Quiz", () => {
   });
 
   it("", () => {
-    cy.server();
+    cy.server();*/
   });
 });

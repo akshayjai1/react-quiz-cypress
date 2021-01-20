@@ -1,9 +1,39 @@
+import {} from "./constants/actionTypes";
 
-import { } from './constants/actionTypes';
-
-const promiseMiddleware = store => next => action => {
-    // Do Nothing for now.//
+export const thunkMiddleware = (store) => (next) => (action) => {
+  console.log("in thunk middleware", store, next, action);
+  if (typeof action === "function") {
+    action(store.dispatch);
+  } else {
     next(action);
+  }
 };
 
-export { promiseMiddleware }
+/* sagaMiddleware = (store) => next => action => {
+ next(action);   
+} */
+// export { promiseMiddleware };
+
+/// inside the code of createStore
+/* dispatch
+thunkMiddleware({store.getState,store.dispatch})(reducer)
+
+
+
+(action) => {
+  console.log("in thunk middleware", store, next, action);
+  if (typeof action === "function") {
+    action(store.dispatch);
+  } else {
+    next(action);
+  }
+};
+ */
+/* 
+ store {
+
+ }
+
+ reducer function (state, action)
+
+ dispatch // work of dispatch is to make the action reach reducer */

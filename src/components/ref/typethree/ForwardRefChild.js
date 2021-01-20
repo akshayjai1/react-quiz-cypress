@@ -8,7 +8,7 @@ const ForwardRefChild = (props, ref1) => {
   return (
     <div className="fence">
       <h3>Forward Ref Child</h3>
-      <div ref={ref1}>Attaching forwardRef to this dom element</div>
+      <div       ref={ref1}> Attaching forwardRef to this dom element</div>
       <div ref={newRef}>Attaching forwardRef to this dom element</div>
     </div>
   );
