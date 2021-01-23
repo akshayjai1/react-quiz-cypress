@@ -16,10 +16,16 @@ import { StateComp } from './components/state/StateComp';
 
 const RoutesC = (props) => {
 	// debugger;
-	console.log(styles);
 	return (
-		<BrowserRouter className="routes">
+		<>
 			<div className={`routes ${styles.routes}`}>
+				<Link className="route" to="/context">
+					Context
+				</Link>
+
+				<Link className="route" to="/state">
+					State
+				</Link>
 				<Link className={`routes ${styles.route}`} to="/quiz" style={{ backgroundColor: 'yellow' }}>
 					Quiz
 				</Link>
@@ -45,6 +51,8 @@ const RoutesC = (props) => {
 					Type
 				</Link>
 			</div>
+		<BrowserRouter className="routes">
+			
 			<Switch>
 				<Route path="/async" component={AsyncCompResolver} />
 				{/* <Route path="/fp" component={FP} /> */}
@@ -55,46 +63,15 @@ const RoutesC = (props) => {
 				<Route path="/fit/:exerciseName" component={Exercise} />
 				<Route path="/fit/" component={Fit} />
 				<Route path="/" component={App} />
+				{/* <Route path="/fp" component={FP} /> */}
+				<Route path="/state" component={StateComp} />
+				<Route path="/type" component={Type} />
+				<Route path="/type/:ab" component={Type} />
+				<Route path="/context" component={ContextParent} />
+				<Route path="/" component={App} />
 			</Switch>
-		</BrowserRouter>
+		</BrowserRouter></>
 	);
-        <Link className="route" to="/ref">
-          Ref
-        </Link>
-        <Link className="route" to="/async">
-          Async Component Loader
-        </Link>
-        <Link className="route" to="/">
-          App
-        </Link>
-        <Link className="route" to="/context">
-          Context
-        </Link>
-        <Link
-          className="route"
-          to={{
-            pathname: '/type',
-            state: 9,
-          }}>
-          Type
-        </Link>
-        <Link className="route" to="/state">
-          State
-        </Link>
-      </div>
-      <Switch>
-        <Route path="/async" component={AsyncCompResolver} />
-        {/* <Route path="/fp" component={FP} /> */}
-        <Route path="/ref" component={Ref} />
-        <Route path="/state" component={StateComp} />
-        <Route path="/type" component={Type} />
-        <Route path="/type/:ab" component={Type} />
-        <Route path="/quiz" component={QuizWrapper} />
-        <Route path="/context" component={ContextParent} />
-        <Route path="/" component={App} />
-      </Switch>
-    </BrowserRouter>
-  );
 };
 
 export const Router = React.memo(RoutesC);

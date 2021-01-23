@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback, useMemo, memo } from 'react';
-import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import { useDispatch } from 'react-redux';
@@ -73,7 +72,6 @@ export const App = memo(function App({ j }) {
 			>
 				redux saga action
 			</Heading>
-
 			{a}
 			{b}
 			{c}
@@ -95,14 +93,14 @@ const GrandChild = () => {
 	console.log('grandChild');
 	return <div>GrandChild</div>;
 };
-import { CSSGrid } from './components/generic/CSSGrid';
+/* import { CSSGrid } from './components/generic/CSSGrid';
 export function App() {
   const dispatch = useDispatch();
   return (
     <div>
-      {/* <Heading>
+      { <Heading>
         Redux App <span>-Thunk - Saga - StyleComponents</span>
-      </Heading> */}
+      </Heading> }
       <Wrapper>
         <Title>
           Redux App <span>-Thunk - Saga - StyleComponents</span>
@@ -124,3 +122,4 @@ export function App() {
     </div>
   );
 }
+ */
