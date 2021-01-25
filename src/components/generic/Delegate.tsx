@@ -2,8 +2,8 @@ import React from 'react';
 /** this should not be arrow function so that
  *  caller's execution context can be used as this */
 function sayHello() {
-  console.log('Hi, these are the props', this.props);
-  this.setState({ a: 'hi' });
+  // console.log('Hi, these are the props', this.props);
+  // this.setState({ a: 'hi' });
 }
 
 export class Delegate extends React.Component<any, any> {

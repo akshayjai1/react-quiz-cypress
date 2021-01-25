@@ -10,15 +10,16 @@ import Ref from './components/ref/Ref';
 import Type from './components/type/Type';
 import { ImmerPractice } from './components/ImmerPractice';
 import { Fit, Exercise } from './burn/Fit';
-import { ContextParent } from './components/context/ContextChild';
+// import { ContextParent } from './components/context/ContextChild';
 import { StateComp } from './components/state/StateComp';
 // import FP from "./components/func/FP";
 
-const RoutesC = (props) => {
+const RoutesC = (props:any) => {
 	// debugger;
 	return (
 		<>
-			<div className={`routes ${styles.routes}`}>
+			<BrowserRouter>
+							<div className={`routes ${styles.routes}`}>
 				<Link className="route" to="/context">
 					Context
 				</Link>
@@ -51,8 +52,7 @@ const RoutesC = (props) => {
 					Type
 				</Link>
 			</div>
-		<BrowserRouter className="routes">
-			
+
 			<Switch>
 				<Route path="/async" component={AsyncCompResolver} />
 				{/* <Route path="/fp" component={FP} /> */}
@@ -67,7 +67,7 @@ const RoutesC = (props) => {
 				<Route path="/state" component={StateComp} />
 				<Route path="/type" component={Type} />
 				<Route path="/type/:ab" component={Type} />
-				<Route path="/context" component={ContextParent} />
+				{/* <Route path="/context" component={ContextParent} /> */}
 				<Route path="/" component={App} />
 			</Switch>
 		</BrowserRouter></>
