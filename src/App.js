@@ -6,13 +6,18 @@ import Frame, { f } from './components/func/Frame';
 import HOC from './components/hoc/HOC';
 import HOC1 from './components/hoc/HOC1';
 import { Test } from './components/fit/Test';
+import { ClassTest } from './components/fit/ClassTest';
 
 class App extends Component {
-	state = { showTest: true };
+	state = { showTest: true, val: 0 };
 	hideTest = () => {
 		this.setState({ showTest: false });
 	};
+	incrementVal = () => {
+		this.setState((state) => ({ val: state.val + 1 }));
+	};
 	render() {
+
 		return (
 			<div>
 				<button
@@ -21,6 +26,13 @@ class App extends Component {
 					}}
 				>
 					Hide Component
+				</button>{' '}
+				<button
+					onClick={() => {
+						this.incrementVal();
+					}}
+				>
+					increment parent val
 				</button>
 				{/* <Frame title={'A Technology Quiz'} photo={1}>
 					<Frame title={f} />
@@ -30,9 +42,9 @@ class App extends Component {
 						return <Frame title="child" />;
 					}}
 				</Frame> */}
-				{this.state.showTest && <Test />}
+				{/* {this.state.showTest && <Test />} */}
+				{this.state.showTest && <ClassTest ab={this.state.val} />}
 				{/* {Frame({ title: "CAT", photo: "Cat Photo" })} */}
-
 				{/* <HOC parentName={"Parent"} /> */}
 				{/* <QuizWrapper /> */}
 			</div>
