@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import axios from "axios";
-import { connect } from "react-redux";
-import Quiz from "./Quiz";
-import { ActionTypes } from "../../constants/actionTypes";
+import React, { Component } from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import Quiz from './Quiz';
+import { ActionTypes } from '../../constants/actionTypes';
 
 const mapStateToProps = (state) => {
   return { ...state.quiz };
@@ -19,14 +19,14 @@ class QuizWrapper extends Component {
     super(props);
     this.state = {
       quizes: [
-        { id: "data/javascript.json", name: "Javascript" },
-        { id: "data/aspnet.json", name: "Asp.Net" },
-        { id: "data/csharp.json", name: "C Sharp" },
-        { id: "data/designPatterns.json", name: "Design Patterns" },
+        { id: 'data/javascript.json', name: 'Javascript' },
+        { id: 'data/aspnet.json', name: 'Asp.Net' },
+        { id: 'data/csharp.json', name: 'C Sharp' },
+        { id: 'data/designPatterns.json', name: 'Design Patterns' },
       ],
-      quizId: "data/javascript.json",
+      quizId: 'data/javascript.json',
     };
-    this.state["da"] = "ABC";
+    this.state['da'] = 'ABC';
     this.state.power = props.power; // putting props inside state and modifying is allowed
   }
 
@@ -91,6 +91,6 @@ class QuizWrapper extends Component {
   }
 }
 // export default QuizWrapper
-console.log("this is quizWrapper", QuizWrapper.toString());
-console.log(QuizWrapper);
+// console.log("this is quizWrapper", QuizWrapper.toString());
+// console.log(QuizWrapper);
 export default connect(mapStateToProps, mapDispatchToProps)(QuizWrapper);
